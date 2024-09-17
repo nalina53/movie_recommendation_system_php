@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #ddd;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    background-color: #343a40;
+    color: white;
+    z-index: 1000;
+}
+
+.section {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
