@@ -2,6 +2,7 @@
 // Retrieve form data
 <?php
 include '../includes/connection.php';
+
 $formUsername = $_POST['username'];
 $formEmail = $_POST['email'];
 $formPassword = $_POST['password'];

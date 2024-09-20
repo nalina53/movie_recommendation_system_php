@@ -57,44 +57,46 @@ session_start(); // Start the session to access session variables
         </div>
     </nav>
 
-    <!-- Image Slider (Carousel) -->
-    <div id="movieCarousel" class="carousel slide mt-3" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#movieCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#movieCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#movieCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <!-- Main Content -->
+    <div class="container mt-5">
+<!-- Image Slider Section -->
+<h2 class="mt-5">Movie Slider</h2>
+<div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="../images/UP.jpg" class="d-block w-100" alt="Movie 1" style="height: 60vh; object-fit: contain;">
+    </div>
+    <div class="carousel-item">
+        <img src="../images/D.jpg" class="d-block w-100" alt="Movie 2" style="height: 60vh; object-fit: contain;">
+    </div>
+    <div class="carousel-item">
+        <img src="../images/OIF.jpg" class="d-block w-100" alt="Movie 3" style="height: 60vh; object-fit: contain;">
+    </div>
+</div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+         <!-- Image Section -->
+         <h2 class="mb-4">Featured Movies</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="../images/IO.jpg" class="img-fluid" alt="Movie 1">
+            </div>
+            <div class="col-md-4">
+                <img src="../images/K2.jpg" class="img-fluid" alt="Movie 2">
+            </div>
+            <div class="col-md-4">
+                <img src="../images/SS.jpg" class="img-fluid" alt="Movie 3">
+            </div>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../images/D.jpg" class="d-block w-100" alt="Movie 1">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Movie Title 1</h5>
-                    <p>Description of Movie 1.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../images/D.jpg" class="d-block w-100" alt="Movie 2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Movie Title 2</h5>
-                    <p>Description of Movie 2.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../images/D.jpg" class="d-block w-100" alt="Movie 3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Movie Title 3</h5>
-                    <p>Description of Movie 3.</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 
     <!-- Bootstrap JS and dependencies -->

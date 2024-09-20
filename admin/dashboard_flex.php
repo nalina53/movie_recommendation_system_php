@@ -8,6 +8,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- External CSS -->
     <link rel="stylesheet" href="../public/css/admin.css">
+    <style>
+        .main-content {
+            margin-left: 250px; /* Adjust according to the sidebar width */
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #343a40;
+            color: #fff;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .movie-card {
+            margin-bottom: 20px;
+        }
+        .card-img-top {
+            max-height: 300px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <!-- Sidebar -->
@@ -18,7 +45,10 @@
                 <a class="nav-link" href="#users">Users</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#movies">Movies</a>
+                <a class="nav-link" href="add_genre.php">Add Genre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="add_movies.php">Add Movies</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#insert">Insert</a>
