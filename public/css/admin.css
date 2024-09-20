@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scroll on body */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; /* Ensure sidebar scrolls if content overflows */
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    height: calc(100vh - 56px); /* Adjust height to account for fixed navbar */
+    padding-top: 56px; /* Add padding to avoid content being hidden under the fixed navbar */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    background-color: #343a40;
+    color: white;
+    z-index: 1000;
+    height: 56px; /* Adjust height to match the navbar's height */
+}
+
+.section {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}

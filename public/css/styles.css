@@ -1,0 +1,35 @@
+/* Custom styles for Movie Recommendation System */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+
+/* styles.css */
+
+.carousel {
+    height: 50vh; /* Set carousel height to 50% of the viewport height */
+    overflow: hidden; /* Hide any overflow */
+}
+
+.carousel-inner {
+    height: 50%; /* Make inner container fill the carousel height */
+}
+
+.carousel-item img {
+    height: 50%; /* Make image fill the carousel height */
+    object-fit: contain; /* Maintain aspect ratio and cover container */
+}
