@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Login - Movie  System</title>
+=======
+    <title>Login - Movie Recommendation System</title>
+>>>>>>> be0e652117da6c8388e2c7176617d9d3d1674eb2
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- External CSS -->

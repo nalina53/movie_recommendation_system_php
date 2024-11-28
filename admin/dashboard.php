@@ -1,5 +1,6 @@
 <?php
 include 'dashboard_flex.php';
+<<<<<<< HEAD
 include '../includes/connection.php';
 
 // Query to count users with the role 'user'
@@ -47,3 +48,22 @@ $conn->close();
 
 <!-- Add Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+=======
+?>
+        <div class="container mt-4">
+            <div id="users" class="section">
+                <h2>Users</h2>
+                <!-- User management content goes here -->
+            </div>
+
+            <div id="movies" class="section mt-4">
+                <h2>Movies</h2>
+                <!-- Movies management content goes here -->
+            </div>
+
+            <div id="insert" class="section mt-4">
+                <h2>Insert</h2>
+                <!-- Image insertion content goes here -->
+            </div>
+        </div>
+>>>>>>> be0e652117da6c8388e2c7176617d9d3d1674eb2
