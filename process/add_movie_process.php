@@ -10,9 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $movieDescription = $_POST['movieDescription'];
     $movieActors = $_POST['movieActors'];
     $movieDirector = $_POST['movieDirector'];
-    $movieCategory = $_POST['movieCategory'];
     $releaseDate = $_POST['release_date'];
-    
+    $movieGenres = $_POST['movieGenres']; // Handle multiple genres
+
     // Handle the image upload
     $targetDir = "../public/uploads/movies/";
     $imageFileName = basename($_FILES["movieImage"]["name"]);
@@ -44,29 +44,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($uploadOk == 1) {
         // Try to move the uploaded file to the target directory
         if (move_uploaded_file($_FILES["movieImage"]["tmp_name"], $targetFilePath)) {
-            
-            // Prepare the SQL query to insert the movie data into the database
-            $stmt = $conn->prepare("INSERT INTO movies (title, release_date, genre_id, director, description) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssiss", $movieName, $releaseDate, $movieCategory, $movieDirector, $movieDescription);
+
+            // Insert the movie data into the 'movies' table (no genre_id here)
+            $stmt = $conn->prepare("INSERT INTO movies (title, release_date, director, description) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $movieName, $releaseDate, $movieDirector, $movieDescription);
 
             // Execute the query to insert movie data
             if ($stmt->execute()) {
                 $movieId = $conn->insert_id; // Get the last inserted movie ID
                 
-                // Insert the image URL into the images table
+                // Insert the image URL into the 'images' table
                 $stmtImg = $conn->prepare("INSERT INTO images (movie_id, image_url) VALUES (?, ?)");
                 $stmtImg->bind_param("is", $movieId, $targetFilePath);
                 $stmtImg->execute();
+                
+                // Insert the selected genres into the 'movie_genres' table
+                if (!empty($movieGenres)) {
+                    foreach ($movieGenres as $genreId) {
+                        $stmtGenre = $conn->prepare("INSERT INTO movie_genres (movie_id, genre_id) VALUES (?, ?)");
+                        $stmtGenre->bind_param("ii", $movieId, $genreId);
+                        $stmtGenre->execute();
+                        $stmtGenre->close();
+                    }
+                }
 
-                echo "Movie added successfully!";
+                echo "<script>alert('Movie added successfully!'); window.location.href='../admin/dashboard.php';</script>";
             } else {
-                echo "Error: " . $stmt->error;
+                echo "<script>alert('Error: " . $stmt->error . "'); window.location.href='../admin/dashboard.php';</script>";
             }
 
             $stmt->close();
             $stmtImg->close();
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "<script>alert('Sorry, there was an error uploading your file.'); window.location.href='admin/dashboard.php';</script>";
         }
     }
 }
